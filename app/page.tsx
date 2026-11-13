@@ -1,6 +1,11 @@
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { SameVisit } from "@/components/sections/SameVisit";
+import { OneVisitListSection } from "@/components/sections/OneVisitListSection";
+import { Services } from "@/components/sections/Services";
+import { ThisMonth } from "@/components/sections/ThisMonth";
+import { Photo } from "@/components/ui/Photo";
 
 export default function Home() {
   return (
@@ -11,7 +16,14 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-        <div className="h-[1200px]" />
+        <SameVisit />
+        <OneVisitListSection />
+        <Services />
+        <ThisMonth
+          buildMonth={new Date().getMonth()}
+          desktopPhoto={<Photo name="wheelbarrow" sizes="100vw" position="50% 60%" decorative />}
+          mobilePhoto={<Photo name="raking" sizes="100vw" position="50% 30%" decorative />}
+        />
       </main>
       <Footer />
     </>

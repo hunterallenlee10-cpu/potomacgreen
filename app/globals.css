@@ -127,6 +127,12 @@
     border-radius: var(--radius-ticket);
     position: relative;
   }
+  .ticket-green {
+    background: var(--color-canopy-2);
+    border: 1px solid var(--color-green-line);
+    border-radius: var(--radius-ticket);
+    position: relative;
+  }
   .ticket-label {
     font-family: var(--font-sans);
     font-weight: 700;
