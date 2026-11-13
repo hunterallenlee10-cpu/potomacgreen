@@ -7,7 +7,7 @@ export function CountyMap({ className = "" }: { className?: string }) {
     <figure className={`on-green rounded-[14px] bg-canopy p-5 text-on-green lg:p-7 ${className}`}>
       <svg
         viewBox={`0 0 ${width} ${height}`}
-        className="h-auto w-full"
+        className="h-auto w-full overflow-visible"
         role="img"
         aria-labelledby="county-map-title"
       >

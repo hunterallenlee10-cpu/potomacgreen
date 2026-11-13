@@ -35,6 +35,6 @@ built by Lee Enterprises Unlimited as a spec demo. Front end only.
 - [x] Phase 3: services bento with the Mulch Calculator, This Month band with `lib/seasons.ts`
 - [x] Phase 4: Service Area map and checker, how it works, the card in his pocket, sample reviews, FAQ, final call-to-action
 - [x] Phase 5: Visit Planner modal, wiring and pre-selects, WhatsApp and SMS summaries, mobile sticky bars, `/contact`
-- [ ] Phase 6: launch switch, titles, descriptions, h1, JSON-LD, robots, sitemap, llms.txt, OG image, favicon, 404, image optimisation, SEO-LAUNCH.md
-- [ ] Phase 6b: Lighthouse on a production build, both modes, mobile and desktop
-- [ ] Phase 7: final review, commit, ready for GitHub and Vercel
+- [x] Phase 6: launch switch, titles, descriptions, h1, JSON-LD, robots, sitemap, llms.txt, OG image, favicon, 404, image optimisation, SEO-LAUNCH.md
+- [x] Phase 6b: Lighthouse on a production build, both modes, mobile and desktop
+- [x] Phase 7: final review, commit, ready for GitHub and Vercel

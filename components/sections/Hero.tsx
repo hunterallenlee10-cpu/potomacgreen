@@ -23,7 +23,7 @@ export function Hero() {
     src: images.hero.src,
     width: images.hero.width,
     height: images.hero.height,
-    sizes: "(min-aspect-ratio: 3/2) 100vw, 138vh",
+    sizes: "(min-aspect-ratio: 138/100) 100vw, 138vh",
   });
 
   return (

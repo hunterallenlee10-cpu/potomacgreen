@@ -3,9 +3,9 @@
 > Landscaping and light handyman services for homeowners in Potomac, Bethesda, Rockville and Silver Spring, Maryland. Established 2026. One local contact for the yard and the small jobs around the house.
 
 ## Contact
-- Phone, text or WhatsApp: 301-674-9361
-- WhatsApp: https://wa.me/13016749361
-- Email: potomacservice@gmail.com
+- Phone, text or WhatsApp: [301-674-9361](tel:+13016749361)
+- WhatsApp: [wa.me/13016749361](https://wa.me/13016749361)
+- Email: [potomacservice@gmail.com](mailto:potomacservice@gmail.com)
 - Typical hours: Monday to Friday, 8:00 a.m. to 4:00 p.m.
 
 ## Service area
@@ -35,5 +35,5 @@
 - Clear limits when a job requires a licensed specialist. Electrical, plumbing, roofing, HVAC and gas work are outside the scope.
 
 ## Pages
-- Home: /
-- Contact: /contact
+- [Home](/): services, the One Visit List, service area, how it works, FAQ
+- [Contact](/contact): call, text, WhatsApp and the Visit Planner

@@ -59,7 +59,7 @@ export function PocketCard() {
                 href={business.phone.whatsapp}
                 rel="noopener"
                 className="block overflow-hidden rounded-[2cqw] bg-ink p-[1cqw]"
-                aria-label="Open a WhatsApp chat with Potomac Green"
+                aria-label="Scan me: open a WhatsApp chat with Potomac Green"
               >
                 <WhatsAppQR className="rounded-[1.4cqw] bg-paper [&>svg]:h-auto [&>svg]:w-full" label="WhatsApp QR code" />
                 <span className="block py-[0.8cqw] text-center text-[4.6cqw] font-semibold leading-none tracking-[0.02em] text-paper">

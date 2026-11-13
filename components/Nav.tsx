@@ -67,7 +67,7 @@ export function Nav({ overHero = true }: { overHero?: boolean }) {
         }`}
       >
         <nav aria-label="Main" className="wrap flex h-[68px] items-center gap-4 lg:h-[76px]">
-          <Link href="/" className="flex min-h-11 items-center gap-3" aria-label="Potomac Green home">
+          <Link href="/" className="flex min-h-11 items-center gap-3">
             <LogoMark height={36} />
             <Wordmark size="sm" tone={solid ? "dark" : "light"} />
           </Link>

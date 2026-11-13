@@ -49,7 +49,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <VisitPlannerModal />
           </ListProvider>
         </PlannerProvider>
-        <Analytics />
+        {/* Vercel sets VERCEL=1 at build time; the analytics script only exists there. */}
+        {process.env.VERCEL ? <Analytics /> : null}
       </body>
     </html>
   );

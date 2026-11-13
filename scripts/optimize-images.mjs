@@ -50,11 +50,13 @@ for (const file of files) {
   }
   manifest[base] = entry;
 }
-// Extra 1920 step for the desktop hero so common laptops skip the 2400 file.
+// Extra 1600 and 1920 steps for the desktop hero so common laptops skip the 2400 file.
 {
   const base = "01-STOCK-white-brick-home-black-mulch-beds-boxwood-urns-HERO";
-  await sharp(path.join(rawDir, `${base}.jpg`)).resize({ width: 1920 }).webp({ quality: 62, effort: 6 }).toFile(path.join(outDir, `${base}-1920.webp`));
-  manifest[base].widths = [640, 1280, 1920, 2400];
+  for (const w of [1600, 1920]) {
+    await sharp(path.join(rawDir, `${base}.jpg`)).resize({ width: w }).webp({ quality: 62, effort: 6 }).toFile(path.join(outDir, `${base}-${w}.webp`));
+  }
+  manifest[base].widths = [640, 1280, 1600, 1920, 2400];
 }
 
 await writeFile(path.join(root, "lib/image-manifest.json"), JSON.stringify(manifest, null, 2) + "\n");

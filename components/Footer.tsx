@@ -10,7 +10,7 @@ export function Footer() {
       <div className="hatch" aria-hidden="true" />
       <div className="wrap grid gap-12 pb-14 pt-16 md:grid-cols-12 md:pb-16 lg:pt-20">
         <div className="md:col-span-5">
-          <Link href="/" className="inline-flex min-h-11 items-center gap-3" aria-label="Potomac Green home">
+          <Link href="/" className="inline-flex min-h-11 items-center gap-3">
             <LogoMark height={52} />
             <Wordmark size="lg" />
           </Link>
