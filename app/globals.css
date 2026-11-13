@@ -1,0 +1,341 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f5f4ec;
+  --color-paper-2: #edebdf;
+  --color-card: #fbfbf7;
+  --color-line: #e2e4d6;
+  --color-canopy: #073e2b;
+  --color-canopy-2: #0b4a2e;
+  --color-lime: #9fc63a;
+  --color-ink: #13261c;
+  --color-muted: #5a6a5f;
+  --color-on-green: #f5f4ec;
+  --color-on-green-muted: rgba(245, 244, 236, 0.72);
+  --color-green-line: rgba(245, 244, 236, 0.12);
+
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-ticket: 14px;
+  --ease-spade: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 80px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    font-variation-settings: "WONK" 0, "SOFT" 0;
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+  }
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-canopy);
+  }
+  /* Focus rings: deep green on paper, lime on green. */
+  :focus-visible {
+    outline: 3px solid var(--color-canopy);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  .on-green :focus-visible,
+  .on-green:focus-visible {
+    outline-color: var(--color-lime);
+  }
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+  @media (min-width: 768px) {
+    .wrap {
+      padding-inline: 32px;
+    }
+  }
+  .section {
+    padding-block: 72px;
+  }
+  @media (min-width: 1024px) {
+    .section {
+      padding-block: 120px;
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.3;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .on-green .eyebrow,
+  .eyebrow-lime {
+    color: var(--color-lime);
+  }
+
+  .wordmark {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(34px, 4.6vw, 56px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  /* The gardener's job ticket. */
+  .ticket {
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-ticket);
+    position: relative;
+  }
+  .ticket-label {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .on-green .ticket-label {
+    color: var(--color-on-green-muted);
+  }
+
+  /* The hatch stripe from the bottom of his business card. Used in four places only. */
+  .hatch {
+    height: 6px;
+    background-color: var(--color-canopy);
+    background-image: repeating-linear-gradient(135deg, var(--color-lime) 0 6px, transparent 6px 11px);
+  }
+  .hatch-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0 0 var(--radius-ticket) var(--radius-ticket);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease,
+      transform 120ms ease,
+      box-shadow 160ms ease;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:active {
+    transform: translateY(1px) scale(0.99);
+  }
+  .btn-primary {
+    background: var(--color-lime);
+    color: var(--color-canopy);
+    box-shadow: inset 0 -2px 0 rgba(7, 62, 43, 0.18);
+  }
+  .btn-primary:hover {
+    background: #b0d24f;
+  }
+  .btn-ghost-paper {
+    color: var(--color-on-green);
+    border: 1.5px solid rgba(245, 244, 236, 0.7);
+  }
+  .btn-ghost-paper:hover {
+    background: rgba(245, 244, 236, 0.1);
+    border-color: var(--color-on-green);
+  }
+  .btn-green {
+    background: var(--color-canopy);
+    color: var(--color-on-green);
+  }
+  .btn-green:hover {
+    background: var(--color-canopy-2);
+  }
+  .btn-outline {
+    color: var(--color-canopy);
+    border: 1.5px solid var(--color-canopy);
+  }
+  .btn-outline:hover {
+    background: var(--color-canopy);
+    color: var(--color-on-green);
+  }
+
+  .text-link {
+    font-weight: 700;
+    color: var(--color-canopy);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(7, 62, 43, 0.35);
+    transition: text-decoration-color 160ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+  }
+  .text-link:hover {
+    text-decoration-color: var(--color-canopy);
+  }
+  .on-green .text-link {
+    color: var(--color-on-green);
+    text-decoration-color: rgba(159, 198, 58, 0.6);
+  }
+  .on-green .text-link:hover {
+    text-decoration-color: var(--color-lime);
+  }
+}
+
+@layer utilities {
+  .container-size {
+    container-type: size;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ---------- Hero ---------- */
+/* The section is a size container. The photo frame does object-fit: cover by hand
+   (fw = frame width), so the Edge Line SVG inside it stays glued to the photo. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  container-type: size;
+  height: max(100svh, 620px);
+}
+@media (min-width: 768px) {
+  .hero {
+    height: max(92svh, 640px);
+  }
+}
+.hero-frame {
+  --ratio: 1.5003; /* 2600 / 1733 */
+  --fx: 0.7;
+  --fy: 0.6;
+  --fw: max(100cqw, calc(100cqh * var(--ratio)));
+  position: absolute;
+  width: var(--fw);
+  aspect-ratio: 2600 / 1733;
+  left: calc((100cqw - var(--fw)) * var(--fx));
+  top: calc((100cqh - var(--fw) / var(--ratio)) * var(--fy));
+}
+@media (max-width: 767px) {
+  .hero-frame {
+    --ratio: 0.9233; /* 1600 / 1733 phone crop */
+    --fx: 0.55;
+    --fy: 0.35;
+    aspect-ratio: 1600 / 1733;
+  }
+}
+.hero-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 96px;
+  padding-bottom: 88px; /* clears the phone sticky bar */
+}
+@media (min-width: 768px) {
+  .hero-content {
+    justify-content: center;
+    padding-top: 104px;
+    padding-bottom: 48px;
+  }
+}
+.hero-scrim {
+  background:
+    linear-gradient(180deg, rgba(7, 62, 43, 0.6) 0, rgba(7, 62, 43, 0) 140px),
+    linear-gradient(0deg, #073e2b 0%, rgba(7, 62, 43, 0.95) 40%, rgba(7, 62, 43, 0.88) 55%, rgba(7, 62, 43, 0.5) 67%, rgba(7, 62, 43, 0) 82%);
+}
+@media (min-width: 768px) {
+  .hero-scrim {
+    background:
+      linear-gradient(180deg, rgba(7, 62, 43, 0.5) 0, rgba(7, 62, 43, 0) 160px),
+      linear-gradient(90deg, rgba(7, 62, 43, 0.88) 0%, rgba(7, 62, 43, 0.74) 30%, rgba(7, 62, 43, 0.3) 48%, rgba(7, 62, 43, 0) 62%);
+  }
+}
+.edge-photo {
+  display: none;
+}
+
+/* Photo mode: wide, tall enough screens. The bed edge in the photo becomes the line under
+   the whole text block. Edge spans y 1052 to 1311 of 1733 (0.4046 fw to 0.5042 fw). */
+@media (min-width: 1280px) and (min-height: 860px) {
+  .hero-frame {
+    top: min(0px, calc(100cqh - 72px - var(--fw) * 0.5042));
+  }
+  .hero-content {
+    --edge-top: calc(var(--fw) * 0.4046 + min(0px, calc(100cqh - 72px - var(--fw) * 0.5042)));
+    --fw: max(100cqw, calc(100cqh * 1.5003));
+    justify-content: flex-end;
+    padding-bottom: calc(100cqh - var(--edge-top) + 30px);
+  }
+  .hero-scrim {
+    --fw: max(100cqw, calc(100cqh * 1.5003));
+    --edge-top: calc(var(--fw) * 0.4046 + min(0px, calc(100cqh - 72px - var(--fw) * 0.5042)));
+    background:
+      linear-gradient(180deg, rgba(7, 62, 43, 0.5) 0, rgba(7, 62, 43, 0) 160px),
+      linear-gradient(90deg, rgba(7, 62, 43, 0.9) 0%, rgba(7, 62, 43, 0.78) 32%, rgba(7, 62, 43, 0.32) 50%, rgba(7, 62, 43, 0) 64%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0, #000 calc(var(--edge-top) - 36px), rgba(0, 0, 0, 0.42) calc(var(--edge-top) + 24px), rgba(0, 0, 0, 0.42) 100%);
+    mask-image: linear-gradient(180deg, #000 0, #000 calc(var(--edge-top) - 36px), rgba(0, 0, 0, 0.42) calc(var(--edge-top) + 24px), rgba(0, 0, 0, 0.42) 100%);
+  }
+  .edge-photo {
+    display: block;
+  }
+  .hero-title {
+    font-size: clamp(64px, min(5.8vw, 9.6vh), 96px) !important;
+  }
+  .edge-under {
+    display: none;
+  }
+}

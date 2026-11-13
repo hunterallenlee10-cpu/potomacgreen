@@ -30,7 +30,7 @@ built by Lee Enterprises Unlimited as a spec demo. Front end only.
 - Motion only in the hero Edge Line and the One Visit List ticket. Reduced motion respected.
 
 ## Checklist
-- [ ] Phase 1: scaffold, design tokens, fonts, nav, hero with the Edge Line, footer
+- [x] Phase 1: scaffold, design tokens, fonts, nav, hero with the Edge Line, footer
 - [ ] Phase 2: block 2 (same visit band with the WhatsApp QR), the One Visit List with `lib/tasks.ts`
 - [ ] Phase 3: services bento with the Mulch Calculator, This Month band with `lib/seasons.ts`
 - [ ] Phase 4: Service Area map and checker, how it works, the card in his pocket, sample reviews, FAQ, final call-to-action
