@@ -242,6 +242,9 @@
 }
 
 @layer utilities {
+  .biz-card {
+    container-type: inline-size;
+  }
   .container-size {
     container-type: size;
   }
@@ -344,4 +347,45 @@
   .edge-under {
     display: none;
   }
+}
+
+.field {
+  display: block;
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid var(--color-line);
+  background: var(--color-card);
+  padding: 0 14px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+.field:focus {
+  border-color: var(--color-canopy);
+}
+.field[aria-invalid="true"] {
+  border-color: var(--color-canopy);
+  border-width: 2px;
+}
+
+@keyframes step-in-next {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes step-in-back {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: none; }
+}
+.step-next { animation: step-in-next 200ms var(--ease-spade) both; }
+.step-back { animation: step-in-back 200ms var(--ease-spade) both; }
+@keyframes planner-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.planner-in { animation: planner-in 220ms var(--ease-spade) both; }
+.backdrop-in { animation: fade-in 200ms ease both; }
+@media (prefers-reduced-motion: reduce) {
+  .step-next, .step-back, .planner-in, .backdrop-in { animation: none; }
 }

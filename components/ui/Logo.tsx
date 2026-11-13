@@ -23,7 +23,7 @@ export function Wordmark({ size = "md", tone = "light" }: { size?: "sm" | "md" |
     <span className="flex flex-col leading-none">
       <span className={`wordmark ${main} ${tone === "light" ? "text-on-green" : "text-canopy"}`}>Potomac Green</span>
       <span
-        className={`mt-[5px] font-bold uppercase tracking-[0.16em] ${sub} ${tone === "light" ? "text-on-green-muted" : "text-muted"}`}
+        className={`mt-[5px] whitespace-nowrap font-bold uppercase tracking-[0.16em] ${sub} ${tone === "light" ? "text-on-green-muted" : "text-muted"}`}
       >
         Landscaping &amp; Handyman Services
       </span>

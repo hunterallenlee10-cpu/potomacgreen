@@ -31,10 +31,10 @@ built by Lee Enterprises Unlimited as a spec demo. Front end only.
 
 ## Checklist
 - [x] Phase 1: scaffold, design tokens, fonts, nav, hero with the Edge Line, footer
-- [ ] Phase 2: block 2 (same visit band with the WhatsApp QR), the One Visit List with `lib/tasks.ts`
-- [ ] Phase 3: services bento with the Mulch Calculator, This Month band with `lib/seasons.ts`
-- [ ] Phase 4: Service Area map and checker, how it works, the card in his pocket, sample reviews, FAQ, final call-to-action
-- [ ] Phase 5: Visit Planner modal, wiring and pre-selects, WhatsApp and SMS summaries, mobile sticky bars, `/contact`
+- [x] Phase 2: block 2 (same visit band with the WhatsApp QR), the One Visit List with `lib/tasks.ts`
+- [x] Phase 3: services bento with the Mulch Calculator, This Month band with `lib/seasons.ts`
+- [x] Phase 4: Service Area map and checker, how it works, the card in his pocket, sample reviews, FAQ, final call-to-action
+- [x] Phase 5: Visit Planner modal, wiring and pre-selects, WhatsApp and SMS summaries, mobile sticky bars, `/contact`
 - [ ] Phase 6: launch switch, titles, descriptions, h1, JSON-LD, robots, sitemap, llms.txt, OG image, favicon, 404, image optimisation, SEO-LAUNCH.md
 - [ ] Phase 6b: Lighthouse on a production build, both modes, mobile and desktop
 - [ ] Phase 7: final review, commit, ready for GitHub and Vercel

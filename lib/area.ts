@@ -75,9 +75,10 @@ export const countyPath =
   "M355.4 86.4L340 71.5L338 72.1L336.1 66.8L333 65.6L330.4 57.3L318.5 37.3L321.2 29L334.3 20L332 21L80.1 170.5L67 184L65.1 191.4L65.8 198.6L62.7 205.1L56.5 209.3L37.4 214.5L32.1 221.5L25.3 236.5L22.2 251.3L20 253.7L22.4 275.1L27.9 284.1L52.2 293.1L58.4 297.5L71.5 318.4L71.2 322.7L76.9 333.1L81.1 336.2L113.5 344.5L144.1 349.3L186.8 349L202 359.1L214 360.8L224.5 366.4L241.2 380.7L259.1 385.9L265.1 389.9L267.6 395.1L267.2 399.7L260.3 409L258.1 417.3L260.6 424.5L264.4 427.8L267.5 439L271.9 441.1L276.1 446.4L280.7 442.4L286.2 451L296.9 454.1L299.9 453.1L306.4 456.4L323.4 454.7L353.2 459.5L363.7 471.9L369.7 486L377.3 493.7L446.4 424.2L480.2 458.2L487.4 447.3L493.8 445.3L495.6 433.9L490.1 428L562.2 302.1L566.5 289.9L563.5 286.2L574.9 279.4L580 271.4L571.1 276.5L564 277.7L556.4 276.2L553.7 270.6L546.8 266.6L545.2 263.2L529 273.2L518.6 268L523.4 262.4L523.6 258.1L526.2 256.7L525.5 255.3L515.4 254.8L512.9 251.5L503.8 250.4L502.7 245.4L505.7 236.3L493.2 231.4L484.7 231.4L481.4 227.9L484.5 222.3L478.5 222.5L477.4 220.4L483.2 218.5L474.8 214.1L478.6 202.1L471.6 198.9L474 185.9L466.8 182.4L465.4 178.9L454 170.5L454.1 165.9L443 150.8L429.7 148L428.2 146.6L427.8 140.1L424.8 135.8L410.3 125.6L391.5 118.9L385.2 121L379.7 117.2L368 116.3L364.6 113.2L364.7 106.9L359.6 99.5L361.4 93.8L359.4 92.5L359.5 89.4L355.4 86.4Z";
 
 // Approximate town centres, projected the same way (lat/long from Census place centroids).
-export const townPins: { town: CoreTown; x: number; y: number; label: "left" | "right" | "top" | "bottom" }[] = [
-  { town: "Rockville", x: 348.3, y: 324.5, label: "right" },
-  { town: "Potomac", x: 299.4, y: 398.9, label: "left" },
-  { town: "Bethesda", x: 399.3, y: 441.2, label: "bottom" },
-  { town: "Silver Spring", x: 459.4, y: 429.9, label: "top" },
+// dx/dy place each label clear of the outline.
+export const townPins: { town: CoreTown; x: number; y: number; dx: number; dy: number; anchor: "start" | "end" | "middle" }[] = [
+  { town: "Rockville", x: 348.3, y: 324.5, dx: 18, dy: 7, anchor: "start" },
+  { town: "Potomac", x: 299.4, y: 398.9, dx: -18, dy: -10, anchor: "end" },
+  { town: "Bethesda", x: 399.3, y: 441.2, dx: -14, dy: 40, anchor: "end" },
+  { town: "Silver Spring", x: 459.4, y: 429.9, dx: 22, dy: -12, anchor: "start" },
 ];
