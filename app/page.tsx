@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { JsonLd } from "@/components/JsonLd";
-import { pages, businessJsonLd, servicesJsonLd, faqJsonLd } from "@/lib/seo";
+import { pages, pageMetadata, businessJsonLd, servicesJsonLd, faqJsonLd } from "@/lib/seo";
 import { Footer } from "@/components/Footer";
 import { MobileBar } from "@/components/MobileBar";
 import { BackToTop } from "@/components/BackToTop";
@@ -19,13 +19,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { RealWork } from "@/components/sections/RealWork";
 
-export const metadata: Metadata = {
-  title: pages.home.title,
-  description: pages.home.description,
-  alternates: { canonical: pages.home.path },
-  openGraph: { title: pages.home.title, description: pages.home.description, url: pages.home.path },
-  twitter: { title: pages.home.title, description: pages.home.description },
-};
+export const metadata: Metadata = pageMetadata(pages.home);
 
 export default function Home() {
   return (

@@ -6,15 +6,9 @@ import { BackToTop } from "@/components/BackToTop";
 import { ContactBody } from "@/components/sections/ContactBody";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { JsonLd } from "@/components/JsonLd";
-import { pages, contactBreadcrumbJsonLd } from "@/lib/seo";
+import { pages, pageMetadata, contactBreadcrumbJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: pages.contact.title,
-  description: pages.contact.description,
-  alternates: { canonical: pages.contact.path },
-  openGraph: { title: pages.contact.title, description: pages.contact.description, url: pages.contact.path },
-  twitter: { title: pages.contact.title, description: pages.contact.description },
-};
+export const metadata: Metadata = pageMetadata(pages.contact);
 
 export default function ContactPage() {
   return (

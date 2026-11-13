@@ -1,7 +1,29 @@
 // Titles, descriptions and JSON-LD. Only true things: no ratings, reviews, prices or awards.
 import { business, services } from "./business";
 import { faqs } from "./faq";
+import type { Metadata } from "next";
 import { absolute } from "./site";
+
+// Next.js replaces (does not merge) a page's openGraph/twitter objects with the layout's,
+// so every page builds the full set here.
+const ogImage = { url: "/og-image.png", width: 1200, height: 630, alt: "Potomac Green. One call. More gets done." };
+export function pageMetadata(page: { path: string; title: string; description: string }): Metadata {
+  return {
+    title: page.title,
+    description: page.description,
+    alternates: { canonical: page.path },
+    openGraph: {
+      type: "website",
+      siteName: "Potomac Green",
+      locale: "en_US",
+      url: page.path,
+      title: page.title,
+      description: page.description,
+      images: [ogImage],
+    },
+    twitter: { card: "summary_large_image", title: page.title, description: page.description, images: [ogImage.url] },
+  };
+}
 
 export const pages = {
   home: {
